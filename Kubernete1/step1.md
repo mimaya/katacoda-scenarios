@@ -20,7 +20,7 @@ kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].eff
 
 echo copy kubeconfig to node01
 scp /etc/kubernetes/admin.conf root@node01:/etc/kubernetes/
-```{{copy}}
+```{{execute "HOST1"}}
 
 # Node01
 
