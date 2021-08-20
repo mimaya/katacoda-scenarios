@@ -12,7 +12,10 @@ View yaml file
 Create Deployment
 `kubectl apply -f files/rs.yaml`{{execute "T2"}}
 
-Get deployment, pod, replicaset - watch till start running
+Get Deployment & ReplicaSet
+`kubectl get deployment,rs `{{execute "T2"}}
+
+Get pod  - watch till start running
 `kubectl get pods,rs --watch`{{execute "T2"}}
 
 By default nginx endpoint is accessible only inside pod, login to pod and check the endpoint using curl

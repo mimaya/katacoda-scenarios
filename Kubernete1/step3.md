@@ -11,16 +11,19 @@ View nginx pod file
 `cat files/nginx-rs.yaml`{{execute "T2"}}
 
 Create pod
-`kubectl apply -f files/rs.yaml`{{execute "T2"}}
+`kubectl apply -f files/nginx-rs.yaml`{{execute "T2"}}
 
-Get pod and replicaset - watch till start running
-`kubectl get pods,rs --watch`{{execute "T2"}}
+Get ReplicaSet
+`kubectl get rs `{{execute "T2"}}
+
+Get pod  - watch till start running
+`kubectl get pods --watch`{{execute "T2"}}
 
 By default nginx endpoint is accessible only inside pod, login to pod and check the endpoint using curl
 
 Login to POD
 ```
-POD=$(kubectl get pods -l app=nginx-pod -o jsonpath="{.items[0].metadata.name}"); 
+POD=$(kubectl get pods -l app=nginx-pod -o jsonpath="{.items[0].metadata.name}")
 echo "Pod Name: $POD"
 kubectl exec $POD -it -- /bin/bash
 ```{{execute "T1"}}
@@ -32,10 +35,7 @@ Exit pod:
 `exit`{{execute "T2"}}
 
 Once pod is deleted it **will** automatically re-created. 
-`kubectl delete pods nginx-pod`{{execute "T2"}}
-
-watch new pod instance automatically recreate in its place: 
-`kubectl get pods --watch`{{execute "T2"}}
+`kubectl delete pods $POD & kubectl get pods --watch`{{execute "T2"}}
 
 
 Cleanup:
