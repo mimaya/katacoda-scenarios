@@ -8,34 +8,36 @@
 
 * Remove NoSchedule taint from controlplane so that it will participate in scheduling
 
-``` bash
-echo Check if tainted
-kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect
+Check if tainted
+`kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect`{{execute "HOST1"}}`
 
-echo Remove NoSchedule taint
-kubectl taint nodes $(hostname) node-role.kubernetes.io/master:NoSchedule-
+Remove NoSchedule taint
+`kubectl taint nodes $(hostname) node-role.kubernetes.io/master:NoSchedule-`{{execute "HOST1"}}
 
-echo Check again
-kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect
+Check again
+`kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect`{{execute "HOST1"}}`
 
-echo copy kubeconfig to node01
-scp /etc/kubernetes/admin.conf root@node01:/etc/kubernetes/
-```{{execute "HOST1"}}
+copy kubeconfig to node01
+`scp /etc/kubernetes/admin.conf root@node01:/etc/kubernetes/`{{execute "HOST1"}}
 
 # Node01
 
 * Open 'node01' in new tab
 `echo open T2 for node01`{{execute T2}}
+
+* SSH to 'node01'
 `ssh root@node01`{{execute T2}}
 
-* copy KubeConfig from controlplane
-`scp /etc/kubernetes/admin.conf root@node01:/etc/kubernetes/`{{execute "HOST1"}}
+* Setup kubenete config: 
+`export KUBECONFIG=/etc/kubernetes/admin.conf`{{execute "T2"}}
 
 * create files dir
+```bash
 mkdir files
-`ssh root@node01`{{execute T2}}
-
-``
-
+cd files
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/nginx-pod.yaml
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/nginx-rs.yaml
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/nginx-dep.yaml
+```{{execute "T2"}}
 
 
