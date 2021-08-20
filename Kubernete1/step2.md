@@ -26,12 +26,18 @@ kubectl exec $POD -it -- /bin/bash
 ```{{execute "T1"}}
 
 Access endpoint using curl
-```
-curl -I 127.0.0.1
-exit
-```{{execute "T2"}}
+`curl -I 127.0.0.1`{{execute "T2"}}
+
+Exit pod:
+`exit`{{execute "T2"}}
+
+Once pod is deleted it will not automatically re-created. 
+`kubectl delete pods nginx-pod`{{execute "T2"}}
+
+watch Pod: 
+`kubectl get pods --watch`{{execute "T2"}}
 
 
 Cleanup:
-`kubectl get pods --watch`{{execute "T2"}}
+`kubectl delete -f files/nginx-pod.yaml`{{execute "T2"}}
  

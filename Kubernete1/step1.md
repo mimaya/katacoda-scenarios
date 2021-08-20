@@ -6,7 +6,7 @@
 
 ## controlplane
 
-* Remove NoSchedule taint from controlplane so that it will participate in scheduling
+Remove NoSchedule taint from controlplane so that it will participate in scheduling
 
 Check if tainted
 `kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect`{{execute "HOST1"}}`
