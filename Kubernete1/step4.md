@@ -10,7 +10,7 @@ View yaml file
 `cat files/nginx-dep.yaml`{{execute "T2"}}
 
 Create Deployment
-`kubectl apply -f files/rs.yaml`{{execute "T2"}}
+`kubectl apply -f files/nginx-dep.yaml`{{execute "T2"}}
 
 Get Deployment & ReplicaSet
 `kubectl get deployment,rs `{{execute "T2"}}
