@@ -1,10 +1,10 @@
 
 <b>ReplicaSet</b>
 
-* ReplicaSet is a set of Pod replicas
-* Ensures that a specified number of Pod replicas are running at any time
-* if one Replica fails or die then it will create new one in its place
-* can not do rolling upgrade or rollback
+* ReplicaSets are higher-level abstractions than pod
+* Responsible for ensuring that a specified number of exact copies of a given pod are running
+* It will create a new pod in place of the one that failed.
+* **Not support** rolling upgrade or rollback
 ---
 
 View nginx pod file
