@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: vol1-hostfile-pvc
+  name: my-persistent-volumeclaim
 spec:
   storageClassName: pv-demo 
   accessModes:

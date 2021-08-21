@@ -51,14 +51,14 @@ Create PV with storageclass: pv-demo and size: 2BG
 `kubectl apply -f files/vol1-hostfile-pv.yaml`{{execute "T2"}}
 
 Check PV is available
-`kubectl get pv  vol1-hostfile-pv --watch`{{execute "T2"}}
+`kubectl get pv  my-persistent-volume --watch`{{execute "T2"}}
 
 
 Create PVC with storageclass: pv-demo and size: 2BG
 `kubectl apply -f files/vol1-hostfile-pvc.yaml`{{execute "T2"}}
 
 Check if PV is bounded to requested PVC
-`kubectl get pvc vol1-hostfile-pvc --watch`{{execute "T2"}}
+`kubectl get pvc my-persistent-volumeclaim --watch`{{execute "T2"}}
 
 
 
@@ -66,22 +66,27 @@ create a pod that create a file in mounted dir
 `kubectl apply -f files/vol1-hostfile-pod.yaml`{{execute "T2"}}
 
 Check if PD is competed
-`kubectl get pod vol1-hostfile-pod --watch`{{execute "T2"}}
+`kubectl get pod myvolumes-pod --watch`{{execute "T2"}}
 
 Login to pod
-`kubectl exec vol1-hostfile-pod -it -- /bin/sh`{{execute "T2"}}
+`kubectl exec myvolumes-pod -i -t -- /bin/sh`{{execute "T2"}}
 
 List monted dir
-`ls /my-pv-path/`{{execute "T2"}}
+```
+ls /my-pv-path/
 
-Create new file in monted dir
-`echo "$date: line appended by pod" > /my-pv-path/persistent-file`{{execute "T2"}}
+cat /my-pv-path/persistent-file
+
+echo more data >> /my-pv-path/persistent-file
+
+```{{execute "T2"}}
+
 
 Exit POD
 `exit`{{execute "T2"}}
 
 
-cat file
+cat file from node
 `cat /mnt/persistent-volume/persistent-file`{{execute "T2"}}
 
  
