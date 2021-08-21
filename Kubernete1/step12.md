@@ -75,17 +75,14 @@ List monted dir
 `ls /my-pv-path/`{{execute "T2"}}
 
 Create new file in monted dir
-`echo "Pod Created file" > /my-pv-path/podCreatedFile.txt`{{execute "T2"}}
+`echo "$date: line appended by pod" > /my-pv-path/persistent-file`{{execute "T2"}}
 
 Exit POD
 `exit`{{execute "T2"}}
 
-check if file created by pod exist in node
-`ls /mnt/persistent-volume/`{{execute "T2"}}
-
 
 cat file
-`cat /mnt/persistent-volume/podCreatedFile.txt`{{execute "T2"}}
+`cat /mnt/persistent-volume/persistent-file`{{execute "T2"}}
 
  
 Cleanup:
