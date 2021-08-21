@@ -11,17 +11,17 @@ spec:
       command: [ "/bin/sh", "-c", "env" ]
       env:
         # Define the environment variable
-        - name: appName
+        - name: CM_EX1_APP_NAME
           valueFrom:
             configMapKeyRef:
               name: configmap-ex1
               key: appName
-        - name: appVersion
+        - name: CM_EX1_APP_VER
           valueFrom:
             configMapKeyRef:
               name: configmap-ex1
               key: appVersion  
-        - name: logLevel
+        - name: CM_EX1_LOG_LEVEL
           valueFrom:
             configMapKeyRef:
               name: configmap-ex1
