@@ -36,7 +36,7 @@ View POD yaml file:
 
 
 Note:
-- PV can use "storageClassName: vol1-hostfile-demo" attribute 
+- PV can use "storageClassName: pv-demo" attribute 
 - A PV of a particular class can only be bound to PVCs requesting that class
 - If PVC request with no storage class then only PV with no storage class can be available
 
@@ -47,14 +47,14 @@ mkdir /mnt/persistent-volume
 echo persistent data >  /mnt/persistent-volume/persistent-file
 ```{{execute "T2"}}
 
-Create PV with storageclass: vol1-hostfile-demo and size: 2BG
+Create PV with storageclass: pv-demo and size: 2BG
 `kubectl apply -f files/vol1-hostfile-pv.yaml`{{execute "T2"}}
 
 Check PV is available
 `kubectl get pv  vol1-hostfile-pv --watch`{{execute "T2"}}
 
 
-Create PVC with storageclass: vol1-hostfile-demo and size: 2BG
+Create PVC with storageclass: pv-demo and size: 2BG
 `kubectl apply -f files/vol1-hostfile-pvc.yaml`{{execute "T2"}}
 
 Check if PV is bounded to requested PVC
@@ -68,12 +68,24 @@ create a pod that create a file in mounted dir
 Check if PD is competed
 `kubectl get pod vol1-hostfile-pod --watch`{{execute "T2"}}
 
-check if file created by pod exist in node
-```
-ls /mnt/local-pv/
+Login to pod
+`kubectl exec vol1-hostfile-pod -it -- /bin/sh`{{execute "T2"}}
 
-cat /mnt/local-pv/pvdemo.txt
-```{{execute "T2"}}
+List monted dir
+`ls /my-pv-path/`{{execute "T2"}}
+
+Create new file in monted dir
+`echo "Pod Created file" > /my-pv-path/podCreatedFile.txt`{{execute "T2"}}
+
+Exit POD
+`exit`{{execute "T2"}}
+
+check if file created by pod exist in node
+`ls /mnt/persistent-volume/`{{execute "T2"}}
+
+
+cat file
+`cat /mnt/persistent-volume/podCreatedFile.txt`{{execute "T2"}}
 
  
 Cleanup:

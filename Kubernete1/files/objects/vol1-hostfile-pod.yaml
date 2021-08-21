@@ -1,20 +1,20 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myvolumes-pod
+  name: vol1-hostfile-pod
 spec:
   containers:
   - image: alpine
     imagePullPolicy: IfNotPresent
-    name: myvolumes-container
+    name: vol1-hostfile-container
 
     command: ['sh', '-c', 'echo Container 1 is Running ; sleep 3600']
 
     volumeMounts:
       - mountPath: "/my-pv-path"
-        name: my-persistent-volumeclaim-name
+        name: vol1-hostfile-pvc-name
 
   volumes:
-    - name: my-persistent-volumeclaim-name
+    - name: vol1-hostfile-pvc-name
       persistentVolumeClaim:
-       claimName: my-persistent-volumeclaim    
+       claimName: vol1-hostfile-pvc    
