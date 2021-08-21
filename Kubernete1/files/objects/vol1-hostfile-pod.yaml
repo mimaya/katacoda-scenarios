@@ -10,9 +10,9 @@ spec:
     command: ['sh', '-c', 'echo "Hello PV demo: $date" > /pvdemo-path/pvdemo.txt']
     volumeMounts:
       - mountPath: "/pvdemo-path"
-        name: local-mount1
+        name: vol1-hostfile-mount
 
   volumes:
-    - name: vol1-hostfile-pod
+    - name: vol1-hostfile-mount
       persistentVolumeClaim:
-       claimName: vol1-hostfile-demo 
+       claimName: vol1-hostfile-pvc 
