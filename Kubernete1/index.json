@@ -40,12 +40,17 @@
       {
         "title": "Step 9",
         "text": "step9.md"
-      },
+      }
 	  
-	  {
+	  ,{
         "title": "Step 10",
         "text": "step10.md"
       }
+	  
+	  ,{
+        "title": "Step 11",
+        "text": "step11.md"
+      }	  
     ],
     "intro": {
       "text": "intro.md"

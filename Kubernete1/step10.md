@@ -3,13 +3,13 @@
 
 * Similar to configMap but stores value securely
 * secret value can be data or stringdata. data -> base64encoded , string -> plaintext
-```
+
     data:
       username: dXNlcm5hbWU=
-	stringData:
-	  role: admin
-```	  
+      stringData:
+      role: admin
 * secret types. opaque is generic type to store any secret fields. other built-in type have pre-defined fields for uniformity
+
     opaque
 	kubernetes.io/service-account-token
 	kubernetes.io/basic-auth
@@ -22,6 +22,7 @@
 
 View yaml file: 
 `cat files/secret1.yaml`{{execute "T2"}}
+
 `cat files/secret1-pod.yaml`{{execute "T2"}}
 
 Create Secret 
