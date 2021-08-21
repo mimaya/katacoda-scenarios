@@ -52,18 +52,22 @@ wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kuber
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-loadbalancer.yaml
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-ingress-nginxi-ingress.yaml
-
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-ingress.yaml
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/configmap1.yaml
-
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/configmap1-pod.yaml
 
-wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/secret1.yaml
 
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/secret1.yaml
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/secret1-pod.yaml
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-emptydir.yaml
+
+
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-hostfile-pod.yaml
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-hostfile-pvc.yaml
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-hostfile-pv.yaml
+
 
 cd ..
 ```{{execute "T2"}}

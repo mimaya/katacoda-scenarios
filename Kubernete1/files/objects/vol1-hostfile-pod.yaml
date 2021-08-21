@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vol1-hostfile-pod
+spec:
+  containers:
+  - image: alpine
+    imagePullPolicy: IfNotPresent
+    name: myvolumes-container
+    command: ['sh', '-c', 'echo "Hello PV demo: $date" > /pvdemo-path/pvdemo.txt']
+    volumeMounts:
+      - mountPath: "/pvdemo-path"
+        name: local-mount1
+
+  volumes:
+    - name: vol1-hostfile-pod
+      persistentVolumeClaim:
+       claimName: vol1-hostfile-demo 
