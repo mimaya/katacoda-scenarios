@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-ex1
+data:
+  appName: "ConfigMap Example"
+  appVersion: v1
+  logLevel: Debug
+ 
