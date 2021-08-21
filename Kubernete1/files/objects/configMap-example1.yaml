@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-ex1
+data:
+  appName: "ConfigMap Example"
+  appVersion: v1
+  logLevel: Debug
+ 
+ ---
+ 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-ex1-pod
+  labels:
+    app: configmap-ex1-pod
+spec:
+  containers:
+    - name: test-container
+      image: k8s.gcr.io/busybox
+      command: [ "/bin/sh", "-c", "env" ]
+      env:
+        # Define the environment variable
+        - name: appName
+          valueFrom:
+            configMapKeyRef:
+              name: configmap-ex1
+              key: appName
+        - name: appVersion
+          valueFrom:
+            configMapKeyRef:
+              name: configmap-ex1
+              key: appVersion  
+        - name: logLevel
+          valueFrom:
+            configMapKeyRef:
+              name: configmap-ex1
+              key: logLevel  
+  restartPolicy: Never

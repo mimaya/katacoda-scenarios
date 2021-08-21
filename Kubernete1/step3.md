@@ -16,7 +16,7 @@ Create pod
 Get ReplicaSet
 `kubectl get rs `{{execute "T2"}}
 
-Watch pod start and running (CTL+C to break)
+Wait for pod to start running (CTL+C to break)
 `kubectl get pods --watch`{{execute "T2"}}
 
 By default nginx endpoint is accessible only inside pod, login to pod and check the endpoint using curl

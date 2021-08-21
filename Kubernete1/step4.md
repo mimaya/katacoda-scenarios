@@ -40,7 +40,7 @@ Once pod is deleted it **will** automatically re-created.
 
 
 Rolling upgrade from nginx:stable -> nginx:latest
-`kubectl apply -f files/nginx-latest-dep.yaml`{{execute "T2"}}
+`kubectl apply -f files/nginx-latest-dep.yaml & kubectl get pods --watch `{{execute "T2"}}
 
 Cleanup:
 `kubectl delete -f files/nginx-latest-dep.yaml`{{execute "T2"}}
