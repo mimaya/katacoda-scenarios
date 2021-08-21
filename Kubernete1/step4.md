@@ -16,7 +16,7 @@ Get Deployment & ReplicaSet
 `kubectl get deployment,rs `{{execute "T2"}}
 
 Get pod  - watch till start running
-`kubectl get pods,rs --watch`{{execute "T2"}}
+`kubectl get pods --watch`{{execute "T2"}}
 
 By default nginx endpoint is accessible only inside pod, login to pod and check the endpoint using curl
 
@@ -34,7 +34,7 @@ Exit pod:
 `exit`{{execute "T2"}}
 
 Once pod is deleted it **will** automatically re-created. 
-`kubectl delete pods nginx-pod`{{execute "T2"}}
+`kubectl delete pods $POD`{{execute "T2"}}
 
 watch new pod instance automatically recreate in its place: 
 `kubectl get pods --watch`{{execute "T2"}}

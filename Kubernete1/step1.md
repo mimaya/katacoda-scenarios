@@ -43,6 +43,10 @@ wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kuber
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/nginx-dep.yaml
 
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/objects/svc-clusterip.yaml
+
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/objects/svc-nodeport.yaml
+
 cd ..
 ```{{execute "T2"}}
 
