@@ -3,11 +3,21 @@
 
 * Similar to configMap but stores value securely
 * secret value can be data or stringdata. data -> base64encoded , string -> plaintext
-```yaml
-	data:
+```
+    data:
       username: dXNlcm5hbWU=
+	stringData:
+	  role: admin
 ```	  
-* 
+* secret types. opaque is generic type to store any secret fields. other built-in type have pre-defined fields for uniformity
+    opaque
+	kubernetes.io/service-account-token
+	kubernetes.io/basic-auth
+	kubernetes.io/ssh-auth
+	kubernetes.io/tls
+	bootstrap.kubernetes.io/token
+	kubernetes.io/dockerconfigjson
+	kubernetes.io/dockercfg
 ---
 
 View yaml file: 
@@ -28,10 +38,6 @@ wait for pod to get completed. (CTL+C to break)
 
 See the output in logs
 `kubectl logs secret1-pod | grep "SECRET_"`{{execute "T2"}}
-
-Exit pod:
-`exit`{{execute "T2"}}
-
 
 Cleanup:
 ```

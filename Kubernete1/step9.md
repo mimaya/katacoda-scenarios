@@ -25,9 +25,6 @@ wait for pod to get completed. (CTL+C to break)
 See the output in logs
 `kubectl logs configmap-ex1-pod | grep "CM_EX1"`{{execute "T2"}}
 
-Exit pod:
-`exit`{{execute "T2"}}
-
 
 Cleanup:
 ```
