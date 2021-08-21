@@ -2,7 +2,10 @@
 <b>Service: Secret</b>
 
 * Similar to configMap but stores value securely
-
+* secret value can be data or stringdata. data -> base64encoded , string -> plaintext
+	data:
+      username: dXNlcm5hbWU=
+* 
 ---
 
 View yaml file: 
@@ -10,13 +13,13 @@ View yaml file:
 `cat files/secret1-pod.yaml`{{execute "T2"}}
 
 Create Secret 
-`kubectl apply -f secret1.yaml`{{execute "T2"}}
+`kubectl apply -f files/secret1.yaml`{{execute "T2"}}
 
 Get Secret
 `kubectl get secrets`{{execute "T2"}}
 
 run busybox pod takes secrets as env and print
-`kubectl apply -f secret1-pod.yaml`{{execute "T2"}}
+`kubectl apply -f files/secret1-pod.yaml`{{execute "T2"}}
 
 See the output in logs
 `kubectl logs secret1-pod | grep "SECRET_"`{{execute "T2"}}
