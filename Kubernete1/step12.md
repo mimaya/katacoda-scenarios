@@ -23,12 +23,16 @@
  - PV claim can request specific size and access modes (e.g., they can be mounted ReadWriteOnce, ReadOnlyMany or ReadWriteMany, see AccessModes).
  - after claim is released, it can be Retained/ Recycled/ Deleted based on 'reclaim policy'
  
+Note: we use PV type 'hostPath' as we don't have any cloud storage. This can not be used in production as pod can be bounded to different nodes. This is only for demo
 
 View PV yaml file: 
-`cat  files/vol1-pv-hostfile.yaml`{{execute "T2"}} 
+`cat  files/vol1-hostfile-pv.yaml`{{execute "T2"}} 
 
 View PVC yaml file: 
-`cat  files/vol1-pvc-hostfile.yaml`{{execute "T2"}} 
+`cat  files/vol1-hostfile-pvc.yaml`{{execute "T2"}} 
+
+View POD yaml file: 
+`cat  files/vol1-hostfile-pod.yaml`{{execute "T2"}} 
 
 
 Note:

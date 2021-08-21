@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: vol1-hostfile-pvc
 spec:
-  storageClassName: pv-demo 
+  storageClassName: vol1-hostfile-demo 
   accessModes:
     - ReadWriteOnce
   resources:
