@@ -1,1 +1,1 @@
-Imaya's Kubernete Learning v1.24
+Imaya's Kubernete Learning v1.25
