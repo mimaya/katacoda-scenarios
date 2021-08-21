@@ -23,7 +23,7 @@ copy kubeconfig to node01
 # Node01
 
 Open 'node01' in new tab
-`echo open T2 for node01 & echo done`{{execute T2}}
+`echo open T2 for node01`{{execute T2}}
 
 SSH to 'node01'
 `ssh root@node01`{{execute T2}}
@@ -43,9 +43,9 @@ wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kuber
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/nginx-dep.yaml
 
-wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/objects/svc-clusterip.yaml
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-clusterip.yaml
 
-wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/objects/svc-nodeport.yaml
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-nodeport.yaml
 
 cd ..
 ```{{execute "T2"}}

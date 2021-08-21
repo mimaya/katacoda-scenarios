@@ -8,20 +8,19 @@
 ---
 
 View yaml file: 
-`cat files/service-nodeport.yaml`{{execute "T2"}}
+`cat files/svc-nodeport.yaml`{{execute "T2"}}
 
 Create nginx Deployment: 
-`kubectl apply -f files/nodeport-dep.yaml`{{execute "T2"}}
+`kubectl apply -f files/nginx-dep.yaml`{{execute "T2"}}
 
 Check if node port is free: 
 `netstat -plant | grep 30001`{{execute "T2"}}
 
-Expose ClusterIP Service: 
-`kubectl apply -f files/service-nodeport.yaml`{{execute "T2"}}
+Expose NodePort Service: 
+`kubectl apply -f files/svc-nodeport.yaml`{{execute "T2"}}
 
 Check if node port is occupied: 
 `netstat -plant | grep 30001`{{execute "T2"}}
-
 
 Display Service info: 
 `kubectl get services`{{execute "T2"}}

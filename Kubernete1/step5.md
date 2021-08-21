@@ -8,26 +8,26 @@
 ---
 
 View yaml file: 
-`cat files/service-clusterip.yaml`{{execute "T2"}}
+`cat files/svc-clusterip.yaml`{{execute "T2"}}
 
 Create nginx Deployment: 
 `kubectl apply -f files/nginx-dep.yaml`{{execute "T2"}}
 
 Expose ClusterIP Service: 
-`kubectl apply -f files/service-clusterip.yaml`{{execute "T2"}}
+`kubectl apply -f files/svc-clusterip.yaml`{{execute "T2"}}
 
 Display Service info: 
 `kubectl get services`{{execute "T2"}}
 
-Login to new busybox pod and access endpoint using clusterIP: 
+Get ClusterIP:
 ```
 CIP=$(kubectl get services nginxsvc-cluster -o jsonpath="{.spec.clusterIP}")
 
 echo ClusterIP : $CIP
-
-kubectl run -i --tty busybox --image=radial/busyboxplus --restart=Never --env="CIP=$CIP"
-
 ```{{execute "T2"}}
+
+Login to new busybox pod and access endpoint using clusterIP: 
+`kubectl run -i --tty busybox --image=radial/busyboxplus --restart=Never --env="CIP=$CIP"`{{execute "T2"}}
 
 
 Run curl command: 
