@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: init-demo
+  name: vol1-emptydir-pod
 spec:
   volumes:
   - name: workdir
@@ -10,12 +10,8 @@ spec:
   # These containers are run during pod initialization
   initContainers:
   - name: install
-    image: busybox
-    command:
-    - echo 
-    - "My custom Index page"
-    - >
-    - "/work-dir/index.html"
+    image: k8s.gcr.io/busybox
+    command: [ "/bin/sh", "-c", "echo 'Hello empty volume demo' > /work-dir/index.html" ]  
     volumeMounts:
     - name: workdir
       mountPath: "/work-dir"    

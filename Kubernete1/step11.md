@@ -18,35 +18,32 @@
  - initcontainer destroyed after completed
  - container run nginx http server and loads files from /usr/share/nginx/html dir in empty volume
  
- 
- 
- 
-	
-
 
 View yaml file: 
-`cat files/secret1.yaml`{{execute "T2"}}
+`cat  files/vol1-emptydir.yaml`{{execute "T2"}} 
 
-`cat files/secret1-pod.yaml`{{execute "T2"}}
+Create nginx pod  
+`kubectl apply -f files/vol1-emptydir.yaml`{{execute "T2"}}
 
-Create Secret 
-`kubectl apply -f files/secret1.yaml`{{execute "T2"}}
+Check if initialization completed and pod is running 
+`kubectl get pods --watch`{{execute "T2"}}
 
-Get Secret
-`kubectl get secrets`{{execute "T2"}}
+Login to pod
+`kubectl exec vol1-emptydir-pod -it -- /bin/bash`{{execute "T2"}}
 
-run busybox pod takes secrets as env and print
-`kubectl apply -f files/secret1-pod.yaml`{{execute "T2"}}
+cat index.html file
+`cat /usr/share/nginx/html/index.html `{{execute "T2"}}
 
-wait for pod to get completed. (CTL+C to break)
-`kubectl get pods  secret1-pod --watch `{{execute "T2"}}
+Access nginx index.html
+`curl http://localhost/index.html`{{execute "T2"}}
 
-See the output in logs
-`kubectl logs secret1-pod | grep "SECRET_"`{{execute "T2"}}
 
+exit Pod
+`exit`{{execute "T2"}}
+
+ 
 Cleanup:
 ```
-kubectl delete -f files/secret1.yaml
-kubectl delete -f files/secret1-pod.yaml
+kubectl delete -f files/vol1-emptydir.yaml
 ```{{execute "T2"}}
 
