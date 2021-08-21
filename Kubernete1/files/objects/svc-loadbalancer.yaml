@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxsvc-lb
+  labels:
+    app: nginxsvc-lb
+spec:
+  type: LoadBalancer
+  ports:
+  - name: nginxsvc-lb-port
+    nodePort: 30002
+    port: 80
+    targetPort: nginx-http-port
+    protocol: TCP
+  selector:
+    app: nginx-pod

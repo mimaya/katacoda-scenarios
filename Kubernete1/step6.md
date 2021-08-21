@@ -4,6 +4,7 @@
 * ClusterIP can be accessed only from inside pod
 * NodePort opens a port on each cluster node.
 * NodePort routes to ClusterIP service
+* If Node/VM IP address change, you need to deal with that
 
 ---
 

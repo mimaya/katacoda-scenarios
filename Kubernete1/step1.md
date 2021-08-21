@@ -47,6 +47,7 @@ wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kuber
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-nodeport.yaml
 
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/svc-loadbalancer.yaml
 cd ..
 ```{{execute "T2"}}
 
