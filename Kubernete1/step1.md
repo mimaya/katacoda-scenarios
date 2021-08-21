@@ -63,7 +63,6 @@ wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kuber
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-emptydir.yaml
 
-
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-hostfile-pod.yaml
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-hostfile-pvc.yaml
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/vol1-hostfile-pv.yaml
