@@ -18,6 +18,10 @@ Get ConfigMap
 run busybox pod printing all env
 `kubectl create -f files/configmap1-pod.yaml`{{execute "T2"}}
 
+wait for pod to get completed. (CTL+C to break)
+`kubectl get pods  configmap-ex1-pod --watch `{{execute "T2"}}
+
+
 See the output in logs
 `kubectl logs configmap-ex1-pod | grep "CM_EX1"`{{execute "T2"}}
 
