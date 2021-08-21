@@ -41,7 +41,11 @@ Note:
 - If PVC request with no storage class then only PV with no storage class can be available
 
 Create local directory "/mnt/local-pv"
-`mkdir -p /mnt/local-pv`{{execute "T2"}}
+```
+mkdir /mnt/persistent-volume
+
+echo persistent data >  /mnt/persistent-volume/persistent-file
+```{{execute "T2"}}
 
 Create PV with storageclass: vol1-hostfile-demo and size: 2BG
 `kubectl apply -f files/vol1-hostfile-pv.yaml`{{execute "T2"}}
