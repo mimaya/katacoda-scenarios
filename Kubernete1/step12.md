@@ -59,7 +59,7 @@ Check if PV is bounded to requested PVC
 
 
 create a pod that create a file in mounted dir
-`kubectl apply vol1-hostfile-pod.yaml`{{execute "T2"}}
+`kubectl apply -f files/vol1-hostfile-pod.yaml`{{execute "T2"}}
 
 Check if PD is competed
 `kubectl get pod vol1-hostfile-pod --watch`{{execute "T2"}}

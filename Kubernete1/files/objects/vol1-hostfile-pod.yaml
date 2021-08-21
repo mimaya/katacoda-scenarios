@@ -3,16 +3,14 @@ kind: Pod
 metadata:
   name: vol1-hostfile-pod
 spec:
-  containers:
-  - image: alpine
-    imagePullPolicy: IfNotPresent
-    name: myvolumes-container
-    command: ['sh', '-c', 'echo "Hello PV demo: $date" > /pvdemo-path/pvdemo.txt']
-    volumeMounts:
-      - mountPath: "/pvdemo-path"
-        name: vol1-hostfile-mount
-
   volumes:
     - name: vol1-hostfile-mount
       persistentVolumeClaim:
        claimName: vol1-hostfile-pvc 
+  containers:
+  - image: alpine
+    imagePullPolicy: IfNotPresent
+    name: myvolumes-container
+    volumeMounts:
+      - mountPath: "/pvdemo-path"
+        name: vol1-hostfile-mount
