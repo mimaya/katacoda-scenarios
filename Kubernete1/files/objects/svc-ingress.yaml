@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: demo-ingress
+spec:
+  rules:
+  - host: mysite.com
+    http:
+      paths:
+      - path: /echo1
+        backend:
+          serviceName: echo-service-1
+          servicePort: 80
+      - path: /echo2
+        backend:
+          serviceName: echo-service-2
+          servicePort: 80          

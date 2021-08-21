@@ -6,7 +6,7 @@
 ---
 
 View yaml file: 
-`cat files/svc-nodeport.yaml`{{execute "T2"}}
+`cat files/svc-loadbalancer.yaml`{{execute "T2"}}
 
 Create nginx Deployment: 
 `kubectl apply -f files/nginx-dep.yaml`{{execute "T2"}}
@@ -14,8 +14,8 @@ Create nginx Deployment:
 Create Loadbalancer Service: 
 `kubectl apply -f files/svc-loadbalancer.yaml`{{execute "T2"}}
 
-Display Service info: 
-`kubectl get services`{{execute "T2"}}
+Wait until external IP is assigned: 
+`kubectl get services --watch`{{execute "T2"}}
 
 Get External IP: 
 ```
