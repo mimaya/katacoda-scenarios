@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myvolumes-pod
+  name: vol1-hostfile-pod
 spec:
   containers:
   - image: alpine
@@ -12,9 +12,9 @@ spec:
 
     volumeMounts:
       - mountPath: "/my-pv-path"
-        name: my-persistent-volumeclaim-name
+        name: vol1-hostfile-pvc-name
 
   volumes:
-    - name: my-persistent-volumeclaim-name
+    - name: vol1-hostfile-pvc-name
       persistentVolumeClaim:
-       claimName: my-persistent-volumeclaim   
+       claimName: vol1-hostfile-pvc   
