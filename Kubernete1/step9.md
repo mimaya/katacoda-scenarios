@@ -28,12 +28,13 @@ View yaml file:
 `cat files/cm1-vol-pod.yaml`{{execute}}
 
 Create POD that takes configMap as file in its volume mount 
-`kubectl apply -f files/cm1-configdata1.yaml`{{execute}}
+`kubectl apply -f files/cm1-vol-pod.yaml`{{execute}}
+
+Wait till pod is up and running
+`kubectl get pods cm1-vol-pod --watch`{{execute}}
 
 Login to Pod and view the file in mounted location
-```
-kubectl exec cm1-vol-pod  -it -- /bin/bash
-```{{execute}}
+`kubectl exec cm1-vol-pod  -it -- /bin/bash`{{execute}}
 
 List the configMap mount dir
 `ls /etc/config/`{{execute}}
@@ -45,9 +46,7 @@ list config files
 `cat /etc/config/game.properties`{{execute}}
 
 Exit   
-```
-exit
-```{{execute}}
+`exit`{{copy}}
 
 Cleanup:
 ```
