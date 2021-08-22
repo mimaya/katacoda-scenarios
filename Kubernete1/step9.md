@@ -43,14 +43,30 @@ list config files
 `cat /etc/config/game.properties`{{execute}}
 
 list config files
-`cat /etc/config/game.properties`{{execute}}
+`cat /etc/config/ui.properties`{{execute}}
 
 Exit   
 `exit`{{copy}}
 
+**Pass to container using ENV **
+
+View yaml file: 
+`cat files/cm1-env-pod.yaml`{{execute}}
+
+Create POD that takes configMap as env 
+`kubectl apply -f files/cm1-env-pod.yaml`{{execute}}
+
+Wait till pod is completed
+`kubectl get pods cm1-env-pod --watch`{{execute}}
+
+Print pod logs
+`kubectl logs cm1-env-pod `{{execute}}
+
+
 Cleanup:
 ```
-kubectl delete -f files/configmap1.yaml
-kubectl delete -f files/configmap1-pod.yaml
+kubectl delete -f files/cm1-vol-pod.yaml
+kubectl delete -f files/cm1-env-pod.yaml
+kubectl delete -f files/cm1-configdata1.yaml
 ```{{execute}}
 

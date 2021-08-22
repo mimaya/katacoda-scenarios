@@ -56,7 +56,7 @@ wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kuber
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/cm1-configdata1.yaml
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/cm1-vol-pod.yaml
-
+wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/cm1-env-pod.yaml
 
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/secret1.yaml
 wget -q https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/objects/secret1-pod.yaml
