@@ -1,0 +1,21 @@
+kind: Pod 
+apiVersion: v1 
+metadata:
+  name: cm1-vol-pod
+
+spec:
+  volumes:
+    - name: cm1-vol-mount1
+      configMap:
+        name: cm1-configdata1
+
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - name: nginx-http-port
+          containerPort: 80
+          protocol: TCP         
+      volumeMounts:
+        - name: cm1-vol-mount1
+          mountPath: /etc/config
