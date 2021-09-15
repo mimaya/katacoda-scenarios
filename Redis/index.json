@@ -23,7 +23,7 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
 	  "code": "start-client.sh"
     },
     "finish": {
