@@ -24,6 +24,7 @@
     ],
     "intro": {
       "text": "intro.md"
+	  "code": "start-client.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -33,6 +34,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "ubuntu:2004"
+    "imageid": "docker"
   }
 }
