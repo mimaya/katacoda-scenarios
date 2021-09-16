@@ -63,7 +63,7 @@ Syntax: SET <key> <value>  EX <expireTimeSec>
 
 If you get value with in 10 sec then you will see value else nil
 
-`GET exKey`{{execute}}`{{execute}}
+`GET exKey`{{execute}}
 
 
 # PSETEX
@@ -79,7 +79,8 @@ Syntax: SET <key> <value>  PX expireTimeMilliSec>
 
 If you get value with in 10 sec then you will see value else nil
 
-`GET pxKey`{{execute}}`{{execute}}
+`GET pxKey`{{execute}}
+
 
 # SETNX
 
@@ -98,3 +99,17 @@ Value will not be changed by SETNX
 
 `GET  nxKey`{{execute}}
 
+
+# MSET/MGET
+
+```
+Set/Get Multiple key value in single command
+
+Syntax: MSET <key-1> <value-1> .. <key-n> <value-n> 
+
+Syntax: MGET <key-1> .. <key-n>
+
+```
+`MSET  "apple" "1" "orange" "2" "grapes" "3"`{{execute}}
+
+`MGET  "apple" "orange" "grapes"`{{execute}}
