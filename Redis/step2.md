@@ -1,24 +1,23 @@
 
----
 ## Intro
- - Redis is key-value database
- - Holds its database entirely in the memory also using the disk only for persistence.
- - Supports complex data types
- - All Redis operations are atomic. 
+- Redis is key-value database
+- Holds its database entirely in the memory also using the disk only for persistence.
+- Supports complex data types
+- All Redis operations are atomic. 
  
 ## Redis DataTypes
- - String
- - List
- - Set
- - Sorted set
- - Hash
+- String
+- List
+- Set
+- Sorted set
+- Hash
  
 
 ## Strings
- - String are binary safe. No special end of string char. 
- - Sequence of bytes with known length. 
- - Any data can be stored in String. EG: JPEG image, serialized object, etc
- - Redis backed **Bloom Filter** can be created using GETBIT and SETBIT
+- String are binary safe. No special end of string char. 
+- Sequence of bytes with known length. 
+- Any data can be stored in String. EG: JPEG image, serialized object, etc
+- Redis backed **Bloom Filter** can be created using GETBIT and SETBIT
  
 # String Commands
 
@@ -35,6 +34,9 @@ Append a string to existing string
 
 Get append value again
 `GET mykey`{{execute}}
+
+Delete a key
+`DEL mykey`{{execute}}
 
 
 Assign a value to a key that will expire in 10 seconds.
