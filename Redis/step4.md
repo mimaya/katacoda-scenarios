@@ -54,6 +54,8 @@ Get all elements
 Get list of elements from a given list from given start and end position
 Syntax: LRANGE key start end 
 ```
+`LPUSH fruits grapes bannana`{{execute}}
+
 `LRANGE fruits 1 3`{{execute}}
 
 Get all elements
@@ -84,7 +86,7 @@ Syntax: LSET key index value
 ```
 `LSET fruits 2 "mango"`{{execute}}
 
-`LGET fruits 2"`{{execute}}
+`LRANGE fruits 0 -1`{{execute}}
 
 
 ## LPUSHX 
@@ -93,7 +95,7 @@ Add element to the head of the list only if the list already exist
 ```
 `LPUSHX vegitables "carrot"`{{execute}}
 
-`LRANGE vegitables 0 -1"`{{execute}}
+`LRANGE vegitables 0 -1`{{execute}}
 
 
 ## LINSERT  

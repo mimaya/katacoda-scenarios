@@ -21,6 +21,10 @@
         "title": "List",
         "text": "step4.md"
       }
+      ,{
+        "title": "Set",
+        "text": "step5.md"
+      }
     ],
     "intro": {
       "text": "intro.md",
