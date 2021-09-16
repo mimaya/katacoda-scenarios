@@ -1,25 +1,27 @@
 
 ## Intro
-- Redis is key-value database
-- Holds its database entirely in the memory also using the disk only for persistence.
-- Supports complex data types
-- All Redis operations are atomic. 
+ Redis is keyvalue database
+ Holds its database entirely in the memory also using the disk only for persistence.
+ Supports complex data types
+ All Redis operations are atomic. 
  
 ## Redis DataTypes
-- String
-- List
-- Set
-- Sorted set
-- Hash
+ String
+ List
+ Set
+ Sorted set
+ Hash
  
 
 ## Strings
-- String are binary safe. No special end of string char. 
-- Sequence of bytes with known length. 
-- Any data can be stored in String. EG: JPEG image, serialized object, etc
-- Redis backed **Bloom Filter** can be created using GETBIT and SETBIT
+ String are binary safe. No special end of string char. 
+ Sequence of bytes with known length. 
+ Any data can be stored in String. EG: JPEG image, serialized object, etc
+ Redis backed **Bloom Filter** can be created using GETBIT and SETBIT
  
 # String Commands
+
+# SET/GET
 
 Assign a value to a key. If key already exist then it overwrites it
 Syntax: SET key value [EX sec | PX millisec]
@@ -38,16 +40,42 @@ Get append value again
 Delete a key
 `DEL mykey`{{execute}}
 
+# SETEX
 
-Assign a value to a key that will expire in 10 seconds.
-`SET mykey "Expires in 10 sec"  EX 10`{{execute}}
-
-same as 
-SETEX <key> <expireTime> <value>
-SETPX <key> <expireTime> <value>
-
+set a string with expireTime in seconds
+Syntax: SETEX  <key> <expireTime> <value>
+same as
+Syntax: SET <key> <value>  EX <expireTimeSec>
+`SETEX  exKey 10 "Hello"
 
 If you get value with in 10 sec then you will see value else nil
-`GET mykey`{{execute}}
+`GET exKey`{{execute}}
+
+
+# PSETEX
+
+set a string with expireTime in millisec
+Syntax: PSETEX  <key> <expireTime> <value>
+same as
+Syntax: SET <key> <value>  PX <expireTimeMilliSec>
+`PSETEX  pxKey 10000 "Hello"
+
+If you get value with in 10 sec then you will see value else nil
+`GET pxKey`{{execute}}
+
+# SETNX
+
+set if only the key is not already present
+Syntax: SETNX <key> <value>
+
+Value will be set by SETNX as the key not exist
+`SETNX  nxKey "Value1"`{{execute}}
+
+`GET  nxKey`{{execute}}
+
+Value will not be changed by SETNX
+`SETNX  nxKey "Value2"`{{execute}}
+
+`GET  nxKey`{{execute}}
 
 
