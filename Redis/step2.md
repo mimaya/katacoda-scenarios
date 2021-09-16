@@ -85,7 +85,7 @@ If you get value with in 10 sec then you will see value else nil
 # SETNX
 
 ```
-set if only the key is not already present
+Set only if the key is not already present
 Syntax: SETNX <key> <value>
 Value will be set by SETNX as the key not exist
 ```

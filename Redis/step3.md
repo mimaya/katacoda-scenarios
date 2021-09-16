@@ -37,7 +37,7 @@ Syntax: INCRBYFLOAT <key> <count>
 ```
 `SET counter 1`{{execute}}
 
-`INCRBY counter 0.25`{{execute}}
+`INCRBYFLOAT counter 0.25`{{execute}}
 
 `GET counter`{{execute}}
 
