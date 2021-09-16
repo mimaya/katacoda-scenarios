@@ -20,25 +20,31 @@
 
 # SET/GET
 
+ ```
  Assign a value to a key. If key already exist then it overwrites it
-
  Syntax: SET key value [EX sec | PX millisec]
-
+```
 `SET mykey "Hello" `{{execute}}
-
 
 
 ``` 
 Get value for a given key
 Syntax: GET key
-`GET mykey`{{execute}}
 ```
+`GET mykey`{{execute}}
 
+
+```
 Append a string to existing string
+```
 `APPEND mykey " World!!"`{{execute}}
 
+```
 Get append value again
+```
 `GET mykey`{{execute}}
 
+```
 Delete a key
+```
 `DEL mykey`{{execute}}
