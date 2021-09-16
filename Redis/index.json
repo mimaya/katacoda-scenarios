@@ -25,6 +25,10 @@
         "title": "Set",
         "text": "step5.md"
       }
+      ,{
+        "title": "Sorted Set",
+        "text": "step6.md"
+      }      
     ],
     "intro": {
       "text": "intro.md",

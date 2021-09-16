@@ -48,7 +48,7 @@ Syntax: SDIFF set1 set2
 
 ## SUNION  
 ```
-Union two or more sets
+Union two or more sets and return the merged values. Doesn't store it in set
 
 Syntax: SUNION set1 set2 ..
 ```
@@ -58,6 +58,18 @@ Syntax: SUNION set1 set2 ..
 `SMEMBERS fruits`{{execute}}
 
 `SMEMBERS fruits1`{{execute}}
+
+
+## SUNIONSTORE   
+```
+Union two or more sets and store the merged values to given set
+
+Syntax: SUNIONSTORE destset set1 set2 ..
+```
+
+`SUNIONSTORE allfruits fruits fruits1`{{execute}}
+
+`SMEMBERS allfruits`{{execute}}
 
 
 ## SREM  
