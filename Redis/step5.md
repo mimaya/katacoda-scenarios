@@ -44,3 +44,66 @@ Syntax: SDIFF set1 set2
 `SDIFF fruits fruits1`{{execute}}
 
 `SDIFF fruits1 fruits`{{execute}}
+
+
+## SUNION  
+```
+Union two or more sets
+
+Syntax: SUNION set1 set2 ..
+```
+
+`SUNION fruits fruits1`{{execute}}
+
+`SMEMBERS fruits`{{execute}}
+
+`SMEMBERS fruits1`{{execute}}
+
+
+## SREM  
+```
+Remove one or more elements from a set
+
+Syntax: SREM key value1 value2 ..
+```
+
+`SREM fruits apple`{{execute}}
+
+`SMEMBERS fruits`{{execute}}
+
+
+## SPOP  
+```
+Remove a random element from a set
+
+Syntax: SPOP key
+```
+
+`SPOP fruits`{{execute}}
+
+`SMEMBERS fruits`{{execute}}
+
+
+## SMOVE  
+```
+Move a element from one set to another
+
+Syntax: SMOVE sourceSet destSet value 
+```
+`SADD vegitables tomatto beans`{{execute}}
+
+`SMOVE vegitables fruits tomatto`{{execute}}
+
+`SMEMBERS fruits`{{execute}}
+
+
+## SSCAN  
+```
+Scan list of elements matching a pattern
+
+Syntax: SSCAN key MATCH pattern count
+```
+`SADD fruits strawberries raspberries blueberries `{{execute}}
+
+`SSCAN fruits MATCH ".*berries" 2`{{execute}}
+
