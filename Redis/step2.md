@@ -20,10 +20,11 @@
 
 # SET/GET
 
-
-> Assign a value to a key. If key already exist then it overwrites it
-> Syntax: SET key value [EX sec | PX millisec]
-> `SET mykey "Hello" `{{execute}}
+ ```
+ Assign a value to a key. If key already exist then it overwrites it
+ Syntax: SET key value [EX sec | PX millisec]
+```
+`SET mykey "Hello" `{{execute}}
 
 
 ``` 
@@ -47,3 +48,53 @@ Get append value again
 Delete a key
 ```
 `DEL mykey`{{execute}}
+
+
+
+# SETEX
+
+```
+set a string with expireTime in seconds
+Syntax: SETEX  <key> <expireTime> <value>
+same as
+Syntax: SET <key> <value>  EX <expireTimeSec>
+```
+`SETEX  exKey 10 "Hello"`{{execute}}
+
+If you get value with in 10 sec then you will see value else nil
+
+`GET exKey`{{execute}}`{{execute}}
+
+
+# PSETEX
+
+```
+set a string with expireTime in millisec
+Syntax: PSETEX  <key> <expireTime> <value>
+same as
+Syntax: SET <key> <value>  PX expireTimeMilliSec>
+```
+
+`PSETEX  pxKey 10000 "Hello"`{{execute}}
+
+If you get value with in 10 sec then you will see value else nil
+
+`GET pxKey`{{execute}}`{{execute}}
+
+# SETNX
+
+```
+set if only the key is not already present
+Syntax: SETNX <key> <value>
+Value will be set by SETNX as the key not exist
+```
+`SETNX  nxKey "Value1"`{{execute}}
+
+`GET  nxKey`{{execute}}
+
+Value will not be changed by SETNX
+
+`SETNX  nxKey "Value2"`{{execute}}
+
+`GET  nxKey`{{execute}}
+
