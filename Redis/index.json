@@ -6,11 +6,11 @@
   "details": {
     "steps": [
       {
-        "title": "Redis - intro",
+        "title": "Setup",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Intro",
         "text": "step2.md"
       },
       {

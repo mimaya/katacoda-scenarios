@@ -20,11 +20,10 @@
 
 # SET/GET
 
- ```
- Assign a value to a key. If key already exist then it overwrites it
- Syntax: SET key value [EX sec | PX millisec]
-```
-`SET mykey "Hello" `{{execute}}
+
+> Assign a value to a key. If key already exist then it overwrites it
+> Syntax: SET key value [EX sec | PX millisec]
+> `SET mykey "Hello" `{{execute}}
 
 
 ``` 
