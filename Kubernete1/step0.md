@@ -1,7 +1,3 @@
-
-# Intro
---
-
 ## Components
 
 ![image info](./files/kuberneteComponents.png)
