@@ -2,7 +2,7 @@
 
 ## Components
 
-![image info](./files/kuberneteComponents.png)
+![image info](https://raw.githubusercontent.com/mimaya/katacoda-scenarios/master/Kubernete1/files/kuberneteComponents.png)
 
 ## Pods
 
