@@ -45,9 +45,37 @@ Syntax: ZCARD key
 
 ## ZCOUNT 
 ```
-find the count of members with in the given scores
+find the count of members with in the given scores range
 
 Syntax: ZCOUNT key minScore maxScore
 ```
 `ZCOUNT marks 80 95`{{execute}}
 
+
+## ZREM 
+```
+Remove a element from a sorted set
+
+Syntax: ZREM key value
+```
+`ZCOUNT marks maths`{{execute}}
+
+`ZRANGE marks 0 -1`{{execute}}
+
+
+## ZRANK  
+```
+Find index of element in sorted set. Rank 0 is the lowest 
+
+Syntax: ZRANK key value
+```
+`ZCOUNT marks physics`{{execute}}
+
+
+## ZREVRANK   
+```
+Find reverse index of element in sorted set
+
+Syntax: ZREVRANK key value
+```
+`ZREVRANK marks physics`{{execute}}
