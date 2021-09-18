@@ -20,19 +20,23 @@
       {
         "title": "List",
         "text": "step4.md"
-      }
-      ,{
+      },
+      {
         "title": "Set",
         "text": "step5.md"
-      }
-      ,{
+      },
+      {
         "title": "Sorted Set",
         "text": "step6.md"
-      }      
+      },
+      {
+        "title": "Hashes",
+        "text": "step7.md"
+      }
     ],
     "intro": {
       "text": "intro.md",
-	  "code": "start-client.sh"
+      "code": "sh start-client.sh"
     },
     "finish": {
       "text": "finish.md"

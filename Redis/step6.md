@@ -40,7 +40,7 @@ find the count of members present in a set
 
 Syntax: ZCARD key
 ```
-`SCARD marks `{{execute}}
+`ZCARD marks `{{execute}}
 
 
 ## ZCOUNT 
@@ -58,7 +58,7 @@ Remove a element from a sorted set
 
 Syntax: ZREM key value
 ```
-`ZCOUNT marks maths`{{execute}}
+`ZREM marks Maths`{{execute}}
 
 `ZRANGE marks 0 -1`{{execute}}
 
@@ -69,7 +69,7 @@ Find index of element in sorted set. Rank 0 is the lowest
 
 Syntax: ZRANK key value
 ```
-`ZCOUNT marks physics`{{execute}}
+`ZRANK marks Physics`{{execute}}
 
 
 ## ZREVRANK   
@@ -78,4 +78,13 @@ Find reverse index of element in sorted set
 
 Syntax: ZREVRANK key value
 ```
-`ZREVRANK marks physics`{{execute}}
+`ZREVRANK marks Physics`{{execute}}
+
+
+## ZSCORE   
+```
+Get score for a given value in the set
+
+Syntax: ZSCORE key value
+```
+`ZSCORE marks Physics`{{execute}}
