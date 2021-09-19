@@ -10,7 +10,7 @@
 Store a hashmap again a key
 Syntax: HMSET key field value ...
 ```
-`HMSET marks Language1 92 Maths 88 Physics 91 Chemistry 78 Biology`{{execute}}
+`HMSET marks Language1 92 Maths 88 Physics 91 Chemistry 78 Biology 81`{{execute}}
 
 ## HGETALL 
 ```
@@ -25,5 +25,5 @@ Syntax: HGETALL key
 Get value of give field store against a key.
 Syntax: HGET key field
 ```
-`HGET marks 80 95`{{execute}}
+`HGET marks Physics`{{execute}}
 
