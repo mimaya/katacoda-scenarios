@@ -32,6 +32,10 @@
       {
         "title": "Hashes",
         "text": "step7.md"
+      },
+      {
+        "title": "Publish/Subscribe",
+        "text": "step8.md"
       }
     ],
     "intro": {

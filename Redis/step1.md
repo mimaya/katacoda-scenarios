@@ -10,7 +10,7 @@
 `sudo apt-get update`{{execute}}`
 
 Install redis server
-`sudo apt-get install redis-server`{{execute}}
+`sudo apt-get --assume-yes install redis-server`{{execute}}
 
 Start Redis server
 `redis-server`{{execute}}
