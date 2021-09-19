@@ -36,7 +36,7 @@
     ],
     "intro": {
       "text": "intro.md",
-      "code": "./start-client.sh"
+      "code": "start-client.sh"
     },
     "finish": {
       "text": "finish.md"
