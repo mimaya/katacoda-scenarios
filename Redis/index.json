@@ -28,11 +28,15 @@
       {
         "title": "Sorted Set",
         "text": "step6.md"
+      },
+      {
+        "title": "Hashes",
+        "text": "step7.md"
       }
     ],
     "intro": {
       "text": "intro.md",
-      "code": "sh start-client.sh"
+      "code": "./start-client.sh"
     },
     "finish": {
       "text": "finish.md"
