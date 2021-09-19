@@ -14,7 +14,7 @@ Syntax: HMSET key field value ...
 
 ## HGETALL 
 ```
-Get all fields stoed against a key
+Get all fields from hash
 Syntax: HGETALL key
 ```
 `HGETALL marks`{{execute}}
@@ -22,8 +22,38 @@ Syntax: HGETALL key
 
 ## HGET 
 ```
-Get value of give field store against a key.
+Get value of given field from hash.
 Syntax: HGET key field
 ```
 `HGET marks Physics`{{execute}}
 
+
+## HEXISTS 
+```
+Check if a field exist.
+Syntax: HEXISTS key field
+```
+`HEXISTS marks Physics`{{execute}}
+
+## HDEL  
+```
+Delete a field from hash
+
+Syntax: HDEL key field
+```
+`HDEL marks Physics`{{execute}}
+
+ 
+## HSETNX  
+```
+Insert a field if the key already not present else do nothing
+
+Syntax: HSETNX key field value
+```
+`HSETNX marks Physics 99`{{execute}}
+
+`HGET marks Physics`{{execute}}
+
+`HSETNX marks Physics 95`{{execute}}
+
+`HGET marks Physics`{{execute}}
