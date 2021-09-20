@@ -4,17 +4,26 @@
 * setup Redis server
 ---
 
-## Redis setup
+## Setup redis server using docker image
 
 Run redis docker image
 `docker run -p 6379:6379 --name redis-server -d redis`{{execute}}
 
-Can run redisbloom that support bloom plugin
-docker run -p 6379:6379 --name redis-redisbloom redislabs/rebloom:latest
+```
+Note : Can run redisbloom that support bloom plugin
+docker run -p 6379:6379 --name redis-server -d redislabs/rebloom:latest
+```
 
 Run redis cli
-`docker exec -it redis-server bash & redis-cli`{{execute T2}}
+`docker exec -it redis-server bash`{{execute}}
 
+`redis-cli`{{execute}}
+
+Test
+`ping`{{execute}}
+
+---
+## Setup redis server 
 
 `sudo apt-get update`{{execute}}`
 
