@@ -36,6 +36,10 @@
       {
         "title": "Publish/Subscribe",
         "text": "step8.md"
+      },
+      {
+        "title": "TODO",
+        "text": "step9.md"
       }
     ],
     "intro": {
@@ -47,7 +51,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "hidefinish": true,
+    "hideintro": true
   },
   "backend": {
     "imageid": "ubuntu:2004"
