@@ -36,6 +36,7 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kafka:2.4"
+    "imageid": "ubuntu"
+
   }
 }
