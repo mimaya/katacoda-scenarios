@@ -30,8 +30,10 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "showide": true
+    "uieditorpath": "/root/example",
+    "showide": true,
+    "idePort": 23000,
+    "uilayout": "terminal"
   },
   "backend": {
     "imageid": "kafka:2.4"
